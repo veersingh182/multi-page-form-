@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; color: black; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+  <main class="mainContainer">
+    <aside class="sideContainer">
+      <div class="step-desc">
+        <span class="stepNo active" id="stepNo-1">1</span>
+        <div class="aditionalStepInfo">
+          <span class="step-No">step 1</span>
+          <span class="step-name">your info</span>
+        </div>
+      </div>
+
+      <div class="step-desc">
+        <span class="stepNo" id="stepNo-2">2</span>
+        <div class="">
+          <span class="step-No">step 2</span>
+          <span class="step-name">select plan</span>
+        </div>
+      </div>
+
+      <div class="step-desc">
+        <span class="stepNo" id="stepNo-3">3</span>
+        <div class="">
+          <span class="step-No">step 3</span>
+          <span class="step-name">add-ons</span>
+        </div>
+      </div>
+
+      <div class="step-desc">
+        <span class="stepNo" id="stepNo-4">4</span>
+        <div class="">
+          <span class="step-No">step 4</span>
+          <span class="step-name">summary</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="steps">
+      <div class="step step1" id="step1">
+        <h1 class="stepHeaing">Personal Info</h1>
+        <p class="stepDesc">Please provide your name, email address, and phone number.</p>
+
+        <div class="inputDiv">
+          <div class="labelAndErrorDiv">
+            <label for="nameInput" class="nameLabel label">Name</label>
+            <span class="error" id="nameError">This field is required</span>
+          </div>
+          <input type="text" id="nameInput" class="nameInput input" placeholder="e.g. Stephen King">
+        </div>
+        <div class="inputDiv">
+
+          <div class="labelAndErrorDiv">
+            <label for="emailInput" class="emailLabel label">Email Address</label>
+            <span class="error" id="emailError">This field is required</span>
+          </div>
+
+          <input type="text" id="emailInput" class="emailInput input" placeholder="e.g. stephenking@lorem.com">
+        </div>
+        <div class="inputDiv">
+
+          <div class="labelAndErrorDiv">
+            <label for="phoneNoInput" class="phoneNoLabel label">Phone Number</label>
+            <span class="error" id="phoneNoError">This field is required</span>
+          </div>
+
+          <input type="text" id="phoneNoInput" class="phoneNoInput input" placeholder="e.g. +1 234 567 890">
+        </div>
+      </div>
+
+
+      <div class="step step2" id="step2">
+
+        <h1 class="stepHeaing">Select your plan</h1>
+        <p class="stepDesc">You have the option of monthly or yearly billing.</p>
+
+        <div class="billingOptions">
+
+          <div class="plan arcade" id="arcade">
+
+            <label for="arcadePlan" class="planLabel">
+
+              <input type="radio" name="plan" id="arcadePlan" class="planInputRadio" checked>
+              <div class="planDetails">
+                <img src="./assets/images/icon-arcade.svg" alt="" class="ArcadeImg">
+                <div class="planDesc">
+                  <h2 class="planTitle">Arcade</h2>
+                  <span class="planPrice planPrice-monthly">$9/mo</span>
+                  <span class="planPrice planPrice-yearly">$90/yr</span>
+                  <span class="free">2 months free</span>
+                </div>
+              </div>
+
+            </label>
+
+          </div>
+
+          <div class="plan advanced" id="advanced">
+
+            <label for="advancedPlan" class="planLabel">
+
+              <input type="radio" name="plan" id="advancedPlan" class="planInputRadio">
+              <div class="planDetails">
+                <img src="./assets/images/icon-advanced.svg" alt="" class="ArcadeImg">
+                <div class="planDesc">
+                  <h2 class="planTitle">Advanced</h2>
+                  <span class="planPrice planPrice-monthly">$12/mo</span>
+                  <span class="planPrice planPrice-yearly">$120/yr</span>
+                  <span class="free">2 months free</span>
+                </div>
+              </div>
+
+            </label>
+
+          </div>
+
+          <div class="plan pro" id="pro">
+
+            <label for="proPlan" class="planLabel">
+
+              <input type="radio" name="plan" id="proPlan" class="planInputRadio">
+              <div class="planDetails">
+                <img src="./assets/images/icon-pro.svg" alt="" class="ArcadeImg">
+                <div class="planDesc">
+                  <h2 class="planTitle">Pro</h2>
+                  <span class="planPrice planPrice-monthly">$15/mo</span>
+                  <span class="planPrice planPrice-yearly">$150/yr</span>
+                  <span class="free">2 months free</span>
+                </div>
+              </div>
+
+            </label>
+
+          </div>
+
+
+        </div>
+
+        <div class="monthlyOrYearly">
+          <span class="monthly" id="monthly">Monthly</span>
+
+          <label for="monthlyYearlyCheckbox" class="monthlyYearlyLabel">
+            <input type="checkbox" id="monthlyYearlyCheckbox">
+            <span class="slider"></span>
+          </label>
+          
+          <span class="yearly" id="yearly">Yearly</span>
+        </div>
+
+      </div>
+
+      <div class="step step3" id="step3">
+
+        <h1 class="stepHeaing">Pick add-ons</h1>
+        <p class="stepDesc">Add-ons help enhance your gamming experience.</p>
+
+        <div class="addOns-options">
+          <label for="onlineServiceInput" class="addOnsCheckboxLabel" id="onlineService">
+            <input type="checkbox" name="" id="onlineServiceInput" class="addOnsInput">
+            <div class="addOnsDesc">
+              <span class="addOnsTitle">Online service</span>
+              <p class="addOnsPara">Access to multiplayer games</p>
+            </div>
+
+            <div class="addOnsPrices">
+              <span class="addOnsMonthlyPrice">+$1/mo</span>
+              <span class="addOnsYearlyPrice">+$10/yr</span>
+            </div>
+          </label>
+
+
+          <label for="largeStorageInput" class="addOnsCheckboxLabel" id="largeStorage">
+            <input type="checkbox" name="" id="largeStorageInput" class="addOnsInput">
+            <div class="addOnsDesc">
+              <span class="addOnsTitle">Large storage</span>
+              <p class="addOnsPara">Extra 1TB of cloud save</p>
+            </div>
+
+            <div class="addOnsPrices">
+              <span class="addOnsMonthlyPrice">+$2/mo</span>
+              <span class="addOnsYearlyPrice">+$20/yr</span>
+            </div>
+          </label>
+
+
+          <label for="customizableProfileInput" class="addOnsCheckboxLabel" id="customizableProfile">
+            <input type="checkbox" name="" id="customizableProfileInput" class="addOnsInput">
+            <div class="addOnsDesc">
+              <span class="addOnsTitle">Customizable profile</span>
+              <p class="addOnsPara">Custom theme on your profile</p>
+            </div>
+
+            <div class="addOnsPrices">
+              <span class="addOnsMonthlyPrice">+$3/mo</span>
+              <span class="addOnsYearlyPrice">+$30/yr</span>
+            </div>
+          </label>
+        </div>
+
+      </div>
+
+      <div class="step step4" id="step4">
+
+        <h1 class="stepHeaing">Finishing up</h1>
+        <p class="stepDesc">Double-check everything looks OK before confirming.</p>
+
+        <div class="invoice" id="invoice">
+
+          <div class="selectedPlan" id="selectedPlan">
+            <div class="selectedPlanDesc">
+              <h3 class="selectedPlan-Name" id="selectedPlan-Name">Arcade (Monthly)</h3>
+              <a href="#" class="chengePlan" id="changePlan">Change</a>
+            </div>
+            <p class="selectedPlan-Price" id="selectedPlan-Price">$9/mo</p>
+          </div>
+
+
+          <div class="selectedAddOns" id="selectedAddOns">
+            
+            <div class="selectedAddOns-onlineService" id="selectedAddOns-onlineService">
+              <span class="selectedAddOns-Name">Online service</span>
+              <span class="selectedAddOns-Price">
+                <span class="selectedAddOns-Price--monthly">+1$/mo</span>
+                <span class="selectedAddOns-Price--yearly">+10$/yr</span>
+              </span>
+            </div>
+
+            <div class="selectedAddOns-largeStorage" id="selectedAddOns-largeStorage">
+              <span class="selectedAddOns-Name">Large storage</span>
+              <span class="selectedAddOns-Price">
+                <span class="selectedAddOns-Price--monthly">+2$/mo</span>
+                <span class="selectedAddOns-Price--yearly">+20$/yr</span>
+              </span>
+            </div>
+
+            <div class="selectedAddOns-profile" id="selectedAddOns-profile">
+              <span class="selectedAddOns-Name">Customizable profile</span>
+              <span class="selectedAddOns-Price">
+                <span class="selectedAddOns-Price--monthly">+3$/mo</span>
+                <span class="selectedAddOns-Price--yearly">+30$/yr</span>
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="total" id="total">
+          <span class="totalTitle" id="tottleTitle">Total (per month)</span>
+          <span class="totalAmt" id="totalAmt">$12/mo</span>
+        </div>
+      </div>
+
+      <div class="step thankyouPage" id="thankyouPage">
+        <img src="./assets/images/icon-thank-you.svg" alt="" class="thankyou-Img">
+
+        <h3 class="thankyou-text">Thank you!</h3>
+        <p class="thankyou-para">Thanks for confirming your subscription! We hope you have fun using our plateform. If you ever need support, Please feel free to email us at support@loremgaming.com.</p>
+      </div>
+
+
+    </main>
+    <footer class="footerBtns" id="footerBtns">
+      <button class="backBtn btn-footer" id="backBtn">Go Back</button>
+      <button class="nextBtn btn-footer" id="nextBtn">Next Step</button>
+    </footer>
+
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">veer virendra saini</a>.
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

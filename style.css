@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: hsl(217, 100%, 97%);
+    color: #000;
+    font-family: 'ubuntu', sans-serif;
+}
+
+.mainContainer{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+.sideContainer{
+    padding-top: 4rem;
+    background:url("./assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.step-desc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aditionalStepInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .3rem;
+    display: none;
+}
+
+.stepNo{
+    color: hsl(231, 100%, 99%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border: 1.5px solid hsl(231, 100%, 99%);
+    border-radius: 50%;
+    padding: .5rem;
+    font-size: 1.3rem;
+    font-family: "Ubuntu" , sans-serif;
+    font-weight: 500;
+}
+
+.active{
+    border: none;
+    background-color:hsl(206, 94%, 87%);
+    color: hsl(213, 96%, 18%);
+}
+
+.step-No{
+    text-transform: uppercase;
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: hsl(217, 100%, 97%);
+    opacity: 70%;
+    display: none;
+}
+.step-name{
+    text-transform: uppercase;
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: hsl(217, 100%, 97%);
+    display: none;
+}
+
+
+.steps{
+    padding: 2rem;
+}
+
+.step{
+    background-color: #fff;
+    padding: 4rem 2rem;
+    border-radius: 8px;
+    transform: translateY(-8.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#step1{
+    display: flex;
+}
+
+.stepHeaing{
+    font-size: 2.4rem;
+    color: hsl(213, 96%, 18%);
+}
+
+.stepDesc{
+    font-size: 1.6rem;
+    opacity: 50%;
+    color: hsl(213, 96%, 18%);
+    margin-bottom: 2rem;
+
+}
+
+.inputDiv{
+    color: hsl(213, 96%, 18%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.labelAndErrorDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.error{
+    font-family: "Ubuntu" , sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: hsl(354, 84%, 57%);
+    display: none;
+}
+
+.label{
+    font-size: 1.4rem;
+    opacity: 90%;
+}
+
+.input{
+    padding: 1rem 1.5rem;
+    font-family: "Ubuntu" , sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    border: 1px solid hsl(229, 24%, 87%);
+    color: hsl(213, 96%, 18%);
+}
+.input:focus{
+    outline: 1px solid hsl(243, 100%, 62%);
+}
+
+.footerBtns{
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-footer{
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    cursor: pointer;
+}
+
+.backBtn{
+    background-color: transparent;
+    color: black;
+    font-family: "Ubuntu" , sans-serif;
+    font-weight: 500;
+    opacity: 60%;
+    visibility: hidden;
+}
+
+.billingOptions{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.planDetails{
+    display: flex;
+    background-color: hsl(217, 100%, 97%);
+    padding: 2rem;
+    border-radius: 10px;
+    gap: 2rem;
+    transition: outline .5s ease-out;
+}
+
+.planDesc{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+#arcadePlan , #advancedPlan, #proPlan{
+    display: none;
+}
+
+.planTitle{
+    font-size: 1.7rem;
+    font-weight: 500;
+    font-family: "Ubuntu" , sans-serif;
+    color: hsl(213, 96%, 18%);
+}
+
+.planPrice{
+    font-size: 1.5rem;
+    opacity: 50%;
+    font-family: "Ubuntu" , sans-serif;
+    color: hsl(213, 96%, 18%);
+    font-weight: 400;
+}
+
+.free{
+    font-size: 1.3rem;
+    color: hsl(213, 96%, 18%);
+    display: none;
+}
+
+.planPrice-yearly{
+    display: none;
+}
+
+.planInputRadio:checked + .planDetails{
+    outline: 1px solid hsl(213, 96%, 18%);
+}
+
+
+.step2{
+    display: none;
+}
+
+.monthlyOrYearly{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.monthlyYearlyLabel{
+    display: inline-block;
+    width: 5rem;
+    height: 2.5rem;
+    background-color: hsl(213, 96%, 18%);
+    padding: 5px;
+    border-radius: 2rem;
+    position: relative
+}
+
+#monthlyYearlyCheckbox{
+    display: none;
+}
+
+.slider{
+    display: block;
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: hsl(217, 100%, 97%);
+    position: absolute;
+    left: 5px;
+    transition: .4s;
+}
+
+.slider::before{
+    transition: .4s;
+}
+
+.monthly, .yearly{
+    font-family: "Ubuntu" , sans-serif;
+    font-weight: 500;
+    opacity: 50%;
+    color: hsl(213, 96%, 18%);
+}
+
+.monthly{
+    opacity: 100%;
+}
+
+#monthlyYearlyCheckbox:checked ~ .slider{
+    -webkit-transform: translateX(25px);
+    -ms-transform: translateX(25px);
+    transform: translateX(25px);
+}
+
+.step3{
+    display: none;
+}
+
+.addOns-options{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.addOnsCheckboxLabel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 5px;
+    outline: 1px solid hsl(229, 24%, 87%);
+}
+
+.addOnsInput{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+#addOnsInput:checked{
+    accent-color: hsl(243, 100%, 62%);
+}
+
+.addOnsDesc{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.addOnsTitle{
+    font-size: 1.6rem;
+    font-family: "Ubuntu" , sans-serif;
+    font-weight: 500;
+    color: hsl(213, 96%, 18%);
+}
+
+.addOnsPara{
+    font-size: 1.3rem;
+    font-family: "Ubuntu" , sans-serif;
+    opacity: 50%;
+}
+
+.addOnsPrices{
+    font-size: 1.4rem;
+    font-family: "Ubuntu" , sans-serif;
+    color: hsl(243, 100%, 62%);
+    opacity: 80%;
+    font-weight: 500;
+    flex: 1;
+    text-align: right;
+}
+.addOnsYearlyPrice{
+    display: none;
+}
+
+.step4{
+    display: none;
+}
+
+.invoice{
+    padding: 2rem;
+    background-color: hsla(216, 100%, 97%, 0.803) ;
+}
+
+.selectedPlan{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid hsl(229, 24%, 87%);
+}
+
+.selectedPlanDesc{
+    display: flex;
+    flex-direction: column;
+}
+
+.selectedPlan-Name{
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: hsl(213, 96%, 18%);
+}
+
+.chengePlan{
+    opacity: 50%;
+    color: black;
+}
+
+.selectedPlan-Price{
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: hsl(213, 96%, 18%);
+}
+
+.selectedAddOns{
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.selectedAddOns-onlineService, .selectedAddOns-largeStorage, .selectedAddOns-profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+.selectedAddOns-Name{
+    opacity: 50%;
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.selectedAddOns-Price{
+    display: flex;
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: hsl(213, 96%, 18%);
+    opacity: 80%;
+}
+
+.selectedAddOns-Price--yearly{
+    display: none;
+}
+
+
+.total{
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.totalTitle{
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: hsl(213, 96%, 18%);
+    opacity: 50%;
+}
+
+.totalAmt{
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: hsl(243, 100%, 62%);
+}
+
+
+.thankyouPage{
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 2rem;
+    display: none;
+}
+
+.thankyou-Img{
+    width: 7rem;
+    height: 7rem;
+}
+
+.thankyou-text{
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: hsl(213, 96%, 18%);
+}
+
+.thankyou-para{
+    text-align: center;
+    line-height: 1.5;
+    font-family: "Ubuntu" , sans-serif;
+    font-size: 1.6rem;
+    color: hsl(0, 0%, 0%);
+    opacity: 50%;
+}
+
+
+
+
+@media only screen and (min-width: 1050px){
+    .mainContainer{
+        width: 80% !important;
+        height: 608px !important;
+        height: auto;
+        display: grid;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        grid-template-rows: 0fr 0fr;
+        grid-template-areas: 
+        "sidebar steps steps steps  "
+        "sidebar footer footer footer  ";
+
+        padding: 2rem;
+        background-color: #fff;
+        box-shadow: 0 0 2px 1.5px hsla(231, 11%, 63%, 0.147);
+        border-radius: 1.3rem;
+    }
+    .steps{
+        grid-area: steps;
+        width: 90%;
+        height: 550px;
+        padding: 2rem 3rem;
+    }
+    .footerBtns{
+        grid-area: footer;
+    }
+
+    .sideContainer{
+        grid-area: sidebar;
+        display: inline-block;
+        width: 274px !important;
+        height: 568px !important;
+        background:url("./assets/images/bg-sidebar-desktop.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 4rem;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+    .step-desc{
+        gap: 1rem;
+    }
+
+    .aditionalStepInfo{
+        display: flex;
+    }
+    .step-No{
+        display: block;
+    }
+    .step-name{
+        display: block;
+    }
+
+    .step{
+        padding: 4rem 0rem;
+        transform: translateY(0);
+        gap: 2rem;
+    }
+
+    .stepDesc{
+        margin-bottom: .5rem;
+    
+    }
+
+    .footerBtns{
+        width: 87%;
+        margin-top: 2rem;
+        background-color: transparent;
+        padding: 0 2rem;
+    }
+
+    .billingOptions{
+        flex-direction: row;
+    }
+    .plan{
+        width: 33%;
+    }
+
+    .planDetails{
+        flex-direction: column;
+    }
+    .planDetails > img{
+        width: 4rem;
+        margin-bottom: 3rem;
+    }
+
+    .monthlyOrYearly{
+        margin: 2rem 0;
+        padding: 1rem;
+        background-color: hsl(217, 100%, 97%);
+    }
+
+    .thankyouPage{
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transform: translate(4rem,25%);
+    }
+
+    .thankyou-para{
+        width: 80%;
+    }
+}
